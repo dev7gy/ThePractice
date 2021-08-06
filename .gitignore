@@ -5,3 +5,11 @@ bin/
 .pdb
 .json
 .cache
+
+
+.jar
+.class
+.iml
+target/
+.idea/
+
