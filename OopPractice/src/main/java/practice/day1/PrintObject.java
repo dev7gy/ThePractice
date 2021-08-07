@@ -1,4 +1,5 @@
 package practice.day1;
+// import java.lang.*은 자동으로 import됨.
 /*
 [패키지의 종류]
 자바 기본(built-in) vozlwl
@@ -73,6 +74,15 @@ jar umf .\META-INF\MANIFEST.MF .\practice.jar
 java -jar .\HelloPractice.jar
  */
 
+/*
+[JAVA의 실행 모델]
+Java는 크로스 플랫폼인가?  - 운영체제나 디바이스의 영향을 받지 않으나, jvm이 없이 돌 수 없다.
+JAVA 코드를 컴파일 한 결과는 바이트 코드 - 실행 파일이 아님
+
+바이트(Byte)코드란?
+JVM이 이해하는 명령어
+JVM이 실행 중에 최종 플랫폼에 맞는 명령어로 바꿔서 실행해 줌.
+ */
 public class PrintObject {
     public void variadicArgumentsPrint(int... nums) {
         for (int i = 0; i < nums.length; i++) {
