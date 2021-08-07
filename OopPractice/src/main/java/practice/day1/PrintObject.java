@@ -21,10 +21,11 @@ package명과 똑같은 폴더 구조를 만들어야 함. - c# namespace와 유
 [빌드 및 실행]
 [- 빌드]
 javac -d <결과물 저장할 폴더> <컴파일 할 java 파일>
+예시) javac -d .\target\classes\ .\src\main\java\practice\*.java .\src\main\java\practice\day1\*.java
 .class 파일에는 바이트 코드가 들어 있음.
 
 [- 실행]
-java -classpath .\class\ practice.HelloPractice
+예시) java -classpath .\target\classes\ practice.HelloPractice
  .java 파일에는 최고 레벨 public 클래스가 하나만 있어야 함.
  둘 이상일 경우 컴파일 안됨.
  */
@@ -41,7 +42,35 @@ jar -cf .\HelloPractice.jar .\target\classes\practice
 jar는 사실상 .zip 파일
 
 [-- 만든 jar파일 실행]
-java -jar lib\HelloPractice.jar => no main manifest attribute, in HelloPractice.jar
+java -jar .\HelloPractice.jar => no main manifest attribute, in HelloPractice.jar(오류 생성)
+[--- 이유 확인]
+jar xvf .\HelloPractice.jar 명령어를 통해 jar 파일 압축 풀기
+META-INF\MANIFEST.MF 파일 존재
+
+[---- Manifest 파일이란?]
+자바 애플리케이션의 정보를 담고 있는 메타데이터 파일
+.jar파일을 만들 떄 이 파일을 같이 넣어줄 수 있음.
+.jar파일의 시작점(메인함수에 대한 정보를 넣어야 함.)
+그 밖에도 여러 정보를 담을 수 있음.
+
+[- JAVA의 경우 2]
+.jar파일을 만듦
+jar -cf .\HelloPractice.jar .\target\classes\practice
+jar xvf .\HelloPractice.jar 로 jar파일 압축을 풀고
+
+Manifest.mf 파일에 main 함수 위치를 알려줌
+cat .\META-INF\MANIFEST.mf
+{
+    Manifest-Version: 1.0
+    Created-By: 11.0.11 (AdoptOpenJDK)
+    Main-Class: practice.HelloPractice <-- 추가된 줄
+}
+
+변경한 MANIFEST.mf 를 적용
+jar umf .\META-INF\MANIFEST.MF .\practice.jar
+
+[-- 만든 jar파일 실행 2]
+java -jar .\HelloPractice.jar
  */
 
 public class PrintObject {
