@@ -1,0 +1,83 @@
+﻿yy	한 줄 전체 내용을 복사	copy	복사를 원하는 줄에 커서를 두고 사용
+Y	한 줄 전체 내용을 복사	copy	yy 와 동일
+nyy	n개의 줄 내용을 복사	copy	n 은 복사를 원하는 줄의 수를 의미
+yw	한 단어를 복사	copy	 
+ynw	n개의 단어를 복사	copy	단어사이에 공백이 있으면 공백까지 복사
+y$	현재 위치에서 그 줄의 끝까지 복사	copy	 
+y0	현재 위치에서 그 줄의 처음까지 복사	copy	커서를 둔 위치까지 복사, 공백이 있다면 공백까지 복사
+y^	현재 위치에서 그 줄의 처음까지 복사	copy	커서를 둔 위치 앞까지 복사, 공백은 복사되지 않음
+.	마지막에 수행한 명령어 반복	repeat	 
+n.	마지막에 수행한 명령어를 n번 반복	repeat	n 은 숫자를 의미
+p	버퍼에 저장된 내용을 아래로 붙이기	paste	 
+np	n번 동안 저장된 내용을 반복하여 아래로 붙여넣기	paste	n 은 숫자를 의미
+P	버퍼에 저장된 내용을 위로 붙이기	paste	 
+nP	n번 동안 저장된 내용을 반복하여 위로 붙여넣기	paste	n 은 숫자를 의미
+xp	두 문자를 바꿈	paste	커서를 바꾸고 싶은 첫 단어에 두고 사용
+dd	현재커서가 위치한 줄의 전체를 삭제	delete	 
+ndd	현재커서가 위치한 줄로부터 n개의 줄 삭제	delete	n 은 숫자를 의미
+dw	한 단어를 삭제	delete	지우고 싶은 단어에 커서를 두고 사용
+dnw	n개의 단어를 삭제	delete	n 은 숫자를 의미, 공백은 무시
+d0	커서가 위치한 줄에서 커서 전까지 삭제	delete	공백도 지워짐
+d^	커서가 위치한 줄에서 커서 전까지 삭제	delete	공백은 지워지지 않음
+x	커서가 있는 문자를 삭제	delete	 
+X	커서의 왼쪽 문자를 삭제	delete	 
+u	버퍼에 저장되어 있는 원래의 내용을 복구	restore	커서에 위치 상관없이 사용 가능
+nu	n 단계까지의 명령을 복구	restore	n 은 숫자를 의미
+cc	한줄을 바꿈	change	 
+cw	한 단어를 바꿈	change	 
+r	한 글자를 바꿈	change	바꾸고 싶은 글자에 커서를 대고 사용
+nr	n 글자를 바꿈	change	n은 숫자를 의미
+/x	현재 위치에서 아래쪽 방향으로 x라는 단어를 찾는다	find	 
+?x	현재 위치에서 위쪽 방향으로 x라는 단어를 찾는다	find	 
+n	찾는 단어를 반복해서 찾는다	find	아래 방향으로 찾기를 반복
+?	찾는 단어를 반복해서 찾는다	find	위쪽 방향으로 찾기를 반복
+:=	파일의 마지막 줄번호를 나타냄	etc	 
+J	현재줄을 윗줄로 붙이기	etc	 
+deep	두 단어를 바꿈	etc	바꾸고 싶은 첫 단어 앞글자에 커서를 두고 사용
+ddp	두 줄을 바꿈	etc	공백도 한 줄로 취급
+h	커서를 한칸 왼쪽으로 이동	cursor	backspace와 동일
+j	커서를 한줄 아래로 이동	cursor	 
+k	커서를 한줄 위로 이동	cursor	 
+i	커서를 한칸 오른쪽으로 이동	cursor	space와 동일
+^	커서를 현재 줄의 첫글자로 이동	cursor	빈칸은 무시
+0	커서를 현재 줄의 처음으로 이동	cursor	tab은 무시하고 빈칸도 취급
+$	커서를 현재 줄의 맨끝으로 이동	cursor	 
+H	커서를 화면상에 처음줄로 이동	cursor	처음줄의 처음으로 커서가 이동
+M	커서를 화면상의 중간줄로 이동	cursor	중간줄의 처음으로 커서가 이동
+L	커서를 화면상의 마지막줄로 이동	cursor	마지막줄의 처음으로 커서가 이동
+G	커서를 파일의 마지막 줄로 이동	cursor	 
+gg	커서를 맨 첫줄로 이동	cursor	 
+nG	n 번째 줄로 이동	cursor	ngg 와 동일
+ngg	n 번쨰 줄로 이동	cursor	nG와 동일
+w	커서를 다음단어의 첫글자로 이동	cursor	 
+b	커서를 이전단어의 첫글자로 이동	cursor	 
+e	현재 단어의 끝 글자로 이동	cursor	 
+E	구두점(?,!) 등을 무시하고 현재 단어의 끝으로 이동	cursor	 
+control+F	한화면 밑으로 이동	cursor	 
+control+B	한화면 위로 이동	cursor	 
+mx	현재의 커서위치를 x 라는 문자로 기억	marking	x는 다른 알파벳으로도 사용가능
+`x	기억된 x 위치로 이동	marking	x는 다른 알파벳으로도 사용가능
+``	이동하기 전의 위치로 이동	marking	제자리로 돌아감
+:g/name	파일 전체에서 'name'이 있는 줄을 모두 보여줌	g_option	enter를 치면 마지막 줄로 이동
+:g/name/nu	파일 전체에서 'name'이 있는 줄을 번호와 함께 모두 보여줌	g_option	enter를 치면 그 위치로 이동
+:n,m g/name/p	n~m 번째 줄에서 'name'이 있는 줄을 모두 보여줌	g_option	n,m 는 숫자, name은 찾고자 하는 단어
+:g/name/d	파일 전체에서 'name'이 있는 줄을 모두 제거	g_option	 
+:w	파일을 저장	write	 
+:wq	파일을 저장하고 종료	write	 
+:w!	강제로 저장하기	write	readonly로 열었을 경우에 사용
+:w filename	새로운 파일이름으로 저장하기	write	filename에 원하는 파일이름을 대신 입력
+vi file1 file2	file1과 file2라는 두개의 문서를 읽음	multi	file1 부터 먼저 읽음
+:args	현재 편집중인 파일 목록을 보여줌	multi	 
+:next	두 번째 파일로 이동	multi	 
+:prev	이전 파일로 이동	multi	 
+:e filename	filename 을 읽어 들여서 편집	multi	 
+:set number	줄번호를 붙여줌	display	:set nu 와 동일
+:set nonumber	줄번호를 없애줌	display	:set nonu 와 동일
+:r filename	파일의 내용을 현재줄 다음에 삽입	read	filename 은 삽입할 파일의 이름
+:nr filename	n번째 줄 다음에 파일의 내용을 삽입	read	n은 숫자를 의미
+i	현재 커서의 위치에 글자를 삽입	insert	 
+I	커서가 있는 줄 맨 앞에 글자를 삽입	insert	 
+a	현재 커서 위치의 다음 칸에 글자를 추가	insert	 
+A	커서가 있는 줄의 맨 뒤에 글자를 추가	insert	 
+o	커서가 있는 줄 다음줄에 새롭게 추가삽입	insert	 
+O	커서가 있는 줄 이전줄에 새롭게 추가삽입	insert	 
