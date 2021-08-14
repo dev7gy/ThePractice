@@ -1,5 +1,24 @@
 # programmers - https://programmers.co.kr/learn/challenges
 ## Mysql
+### Select
+#### LEVEL 1
+- https://programmers.co.kr/learn/courses/30/lessons/59034
+```
+// order by
+SELECT * FROM ANIMAL_INS ORDER BY ANIMAL_ID;
+```
+
+- https://programmers.co.kr/learn/courses/30/lessons/59035
+```
+// order by { } desc
+SELECT NAME, DATETIME FROM ANIMAL_INS ORDER BY ANIMAL_ID DESC;
+```
+
+- https://programmers.co.kr/learn/courses/30/lessons/59036
+```
+// where
+SELECT ANIMAL_ID, NAME FROM ANIMAL_INS WHERE INTAKE_CONDITION = 'SICK';
+```
 
 ### IS NULL
 #### LEVEL 1
