@@ -30,7 +30,6 @@ WHERE NAME IS NULL
 ORDER BY ANIMAL_ID ASC;
 ```
 
-
 - https://programmers.co.kr/learn/courses/30/lessons/59407
 ```
 SELECT ANIMAL_ID FROM ANIMAL_INS 
@@ -45,3 +44,4 @@ ORDER BY ANIMAL_ID ASC;
 SELECT ANIMAL_TYPE, ifnull(name, 'No name') as NAME, SEX_UPON_INTAKE 
 FROM ANIMAL_INS
 ```
+
