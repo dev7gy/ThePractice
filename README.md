@@ -9,6 +9,6 @@
 3. https://github.com/settings/tokens -> Click "Generate new token"
 ```
 
-- fatal: unable to access 'https://github.com/{USER ID}/{GIT REPO}.git/': The requested URL returned error: 403
+- fatal: unable to access 'https://github.com/{USER_ID}/{GIT_REPO}.git/': The requested URL returned error: 403
 ```
 ```
