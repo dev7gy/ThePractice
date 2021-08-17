@@ -3,6 +3,7 @@
 ---
 #### Easy
 - Two SUM
+- Build Array From Permutation
 
 #### Medium
 - Count Good Nodes in Binary Tree
