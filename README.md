@@ -3,7 +3,7 @@
 ## OopPractice
 ### - [Java Practice](https://github.com/dev7gy/ThePractice/tree/main/OopPractice)
 
-## codingInterview
+## codingInterview [개념 정리](https://github.com/dev7gy/ThePractice/tree/main/codingInterview)
 ### - [Java Practice](https://github.com/dev7gy/ThePractice/tree/main/codingInterview/AlgorithmJava)
 ### - [C# Practice](https://github.com/dev7gy/ThePractice/tree/main/codingInterview/HelloCoding_Algorithm)
 ### - [LeetCode](https://github.com/dev7gy/ThePractice/tree/main/codingInterview/leetcode)
@@ -11,6 +11,8 @@
 ## SqlPractice
 ### - [Sql Practice](https://github.com/dev7gy/ThePractice/tree/main/SqlPractice)
 
+## MVC 패턴 구경하기
+### - [.net MVC](https://github.com/dev7gy/ThePractice/tree/main/WebApplication1)
 ## Before 2021.08
 ### - [ygunna](https://github.com/dev7gy/ThePractice/tree/main/ygunna)
 - [Spring Boot](https://github.com/dev7gy/ThePractice/tree/main/ygunna/springBootStudy)
