@@ -1,15 +1,26 @@
 # ThePractice
+---
 ## OopPractice
-[Java Practice](https://github.com/dev7gy/ThePractice/tree/main/OopPractice)
+### - [Java Practice](https://github.com/dev7gy/ThePractice/tree/main/OopPractice)
+
 ## codingInterview
-[Java Practice](https://github.com/dev7gy/ThePractice/tree/main/codingInterview/AlgorithmJava)
-[C# Practice](https://github.com/dev7gy/ThePractice/tree/main/codingInterview/HelloCoding_Algorithm)
-[LeetCode](https://github.com/dev7gy/ThePractice/tree/main/codingInterview/leetcode)
+### - [Java Practice](https://github.com/dev7gy/ThePractice/tree/main/codingInterview/AlgorithmJava)
+### - [C# Practice](https://github.com/dev7gy/ThePractice/tree/main/codingInterview/HelloCoding_Algorithm)
+### - [LeetCode](https://github.com/dev7gy/ThePractice/tree/main/codingInterview/leetcode)
 
 ## SqlPractice
-[Sql Practice](https://github.com/dev7gy/ThePractice/tree/main/SqlPractice)
+### - [Sql Practice](https://github.com/dev7gy/ThePractice/tree/main/SqlPractice)
 
-## Using github
+## Before 2021.08
+### - [ygunna](https://github.com/dev7gy/ThePractice/tree/main/ygunna)
+- [Spring Boot](https://github.com/dev7gy/ThePractice/tree/main/ygunna/springBootStudy)
+- [Make tool](https://github.com/dev7gy/ThePractice/tree/main/ygunna/studyAll/make)
+- [MSA(SPring Cloud)](https://github.com/dev7gy/ThePractice/tree/main/ygunna/studyAll/msa)
+- [vi 명령어 검색기(C언어)](https://github.com/dev7gy/ThePractice/tree/main/ygunna/studyAll/prj/vi_cmd_srch)
+- [unix_system_call](https://github.com/dev7gy/ThePractice/tree/main/ygunna/studyAll/unix_system/ch01_unixSystemBasic)
+- [vanila JS_app](https://github.com/dev7gy/ThePractice/tree/main/ygunna/studyAll/web)
+---
+# Using github
 - remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
 
 ```
