@@ -1,4 +1,13 @@
 # ThePractice
+## OopPractice
+[Java Practice](https://github.com/dev7gy/ThePractice/tree/main/OopPractice)
+## codingInterview
+[Java Practice](https://github.com/dev7gy/ThePractice/tree/main/codingInterview/AlgorithmJava)
+[C# Practice](https://github.com/dev7gy/ThePractice/tree/main/codingInterview/HelloCoding_Algorithm)
+[LeetCode](https://github.com/dev7gy/ThePractice/tree/main/codingInterview/leetcode)
+
+## SqlPractice
+[Sql Practice](https://github.com/dev7gy/ThePractice/tree/main/SqlPractice)
 
 ## Using github
 - remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
