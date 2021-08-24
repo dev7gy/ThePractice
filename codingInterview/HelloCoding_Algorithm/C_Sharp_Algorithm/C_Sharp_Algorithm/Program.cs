@@ -15,7 +15,7 @@ namespace C_Sharp_Algorithm
             Console.WriteLine($"index: {chap1.BasicSearch(sortedArray, searchItem)}");
             Console.WriteLine($"index: {chap1.BinarySearch(sortedArray, searchItem)}");
 
-            Console.WriteLine("### Chapter1 ###");
+            Console.WriteLine("### Chapter2 ###");
 
             Chapter2 chap2 = new Chapter2();
             List<int> array = chap2.createRandomValues(7, 10);

@@ -21,14 +21,16 @@ public class ArrayList implements DataStructure {
         if (index >= this.length) {
             return null;
         } else {
-            for (int i = length; i > index; i--) {
-                int temp = this.array[i];
-                this.array[i - 1] = temp;
-                this.array[i] = -1;
-            }
-            this.array[index] = num;
             if (this.length < this.array.length) {
+                for (int i = length; i > index; i--) {
+                    this.array[i] = this.array[i - 1];
+                }
+                this.array[index] = num;
                 this.length++;
+            } else {
+                for (int i = length - 1; i > index; i--) {
+                    this.array[i] = this.array[i - 1];
+                }
             }
         }
         return this.array;

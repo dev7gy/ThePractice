@@ -48,7 +48,7 @@ public class PracticeMain {
 
         //ArrayList
         ArrayList aList = new ArrayList(10);
-        for (int i = 0; i < 10; i += 2) {
+        for (int i = 0; i < 20; i += 2) {
             aList.insert(i);
         }
         aList.print();
