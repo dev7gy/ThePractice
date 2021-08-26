@@ -1,4 +1,4 @@
-package hellocoding.datastructure;
+package hellocoding.datastructure.linked;
 
 public class Node {
     private int value;

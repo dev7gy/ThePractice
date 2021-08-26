@@ -1,10 +1,10 @@
 package hellocoding.datastructure;
 
-public class ArrayList implements DataStructure {
+public class SequentailList implements DataStructure {
     private int[] array;
     private int length;
 
-    public ArrayList(int num) {
+    public SequentailList(int num) {
         this.array = new int[num];
         this.length = 0;
     }
@@ -38,7 +38,7 @@ public class ArrayList implements DataStructure {
 
     @Override
     public void print() {
-        System.out.println("ArrayList length: " + this.length);
+        System.out.println("SequentailList length: " + this.length);
         for (int i = 0; i < this.length; i++) {
             System.out.printf("%5d", this.array[i]);
         }

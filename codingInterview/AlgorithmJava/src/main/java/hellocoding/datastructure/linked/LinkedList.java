@@ -1,4 +1,6 @@
-package hellocoding.datastructure;
+package hellocoding.datastructure.linked;
+
+import hellocoding.datastructure.DataStructure;
 
 public class LinkedList implements DataStructure {
     private Node head;

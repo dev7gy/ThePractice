@@ -1,9 +1,11 @@
 package hellocoding;
 
 import hellocoding.algorithm.SearchAlgorithm;
-import hellocoding.datastructure.ArrayList;
-import hellocoding.datastructure.LinkedList;
-import hellocoding.datastructure.Node;
+import hellocoding.datastructure.ArrayQueue;
+import hellocoding.datastructure.ArrayStack;
+import hellocoding.datastructure.SequentailList;
+import hellocoding.datastructure.linked.LinkedList;
+import hellocoding.datastructure.linked.Node;
 
 public class PracticeMain {
 
@@ -24,7 +26,7 @@ public class PracticeMain {
         /**
          *  DataStructure
          *  - LinkedList
-         *  - ArrrayList
+         *  - SequentialList
          */
         // LinkedList
         LinkedList lList = new LinkedList();
@@ -46,8 +48,8 @@ public class PracticeMain {
             lList.print();
         }
 
-        //ArrayList
-        ArrayList aList = new ArrayList(10);
+        //SequentailList
+        SequentailList aList = new SequentailList(10);
         for (int i = 0; i < 20; i += 2) {
             aList.insert(i);
         }
@@ -58,6 +60,43 @@ public class PracticeMain {
         System.out.println(aList.delete(4));
         aList.print();
 
+        /**
+         * Stack
+         *
+         */
+        ArrayStack arrayStack = new ArrayStack(6);
+        for (int i = 1; i < 20; i+=2) {
+            if (arrayStack.isEmpty()) {
+                arrayStack.push(i);
+            } else {
+                break;
+            }
+        }
+        System.out.printf("ArrayStack Length: %d", arrayStack.getLength());
+        System.out.println();
+        printArray(arrayStack.getStack());
+        for (int i = 0; i < arrayStack.getLength() + 1; i++) {
+            System.out.printf("ArrayStack POP: %d", arrayStack.pop());
+        }
+        System.out.println();
+        printArray(arrayStack.getStack());
+        System.out.printf("ArrayStack Length: %d", arrayStack.getLength());
+        System.out.println();
+        /**
+        queue
+         */
+        ArrayQueue AQ = new ArrayQueue(5);
+        for (int i = 0; i < 5; i++) {
+            AQ.enqueue(i);
+            AQ.dequeue();
+        }
+        printArray(AQ.getQueue());
+        AQ.enqueue(14);
+        AQ.dequeue();
+        AQ.enqueue(17);
+        AQ.dequeue();
+        AQ.enqueue(19);
+        printArray(AQ.getQueue());
     }
 
     private static void printArray(int[] array) {
