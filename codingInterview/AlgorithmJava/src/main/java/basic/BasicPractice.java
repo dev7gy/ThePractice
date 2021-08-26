@@ -1,13 +1,13 @@
-package hellocoding;
+package basic;
 
-import hellocoding.algorithm.SearchAlgorithm;
-import hellocoding.datastructure.ArrayQueue;
-import hellocoding.datastructure.ArrayStack;
-import hellocoding.datastructure.SequentailList;
-import hellocoding.datastructure.linked.LinkedList;
-import hellocoding.datastructure.linked.Node;
+import basic.algorithm.SearchAlgorithm;
+import basic.datastructure.ArrayQueue;
+import basic.datastructure.ArrayStack;
+import basic.datastructure.SequentailList;
+import basic.datastructure.linked.LinkedList;
+import basic.datastructure.linked.Node;
 
-public class PracticeMain {
+public class BasicPractice {
 
     public static void main(String[] args) {
         /**

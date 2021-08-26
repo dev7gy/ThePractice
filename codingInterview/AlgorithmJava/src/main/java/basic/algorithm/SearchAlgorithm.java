@@ -1,4 +1,4 @@
-package hellocoding.algorithm;
+package basic.algorithm;
 
 public class SearchAlgorithm {
     public int[] sortedArray = {1, 2, 3, 7, 9, 12, 21, 23, 27};

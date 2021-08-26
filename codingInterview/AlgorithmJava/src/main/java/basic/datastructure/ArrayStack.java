@@ -1,4 +1,4 @@
-package hellocoding.datastructure;
+package basic.datastructure;
 
 public class ArrayStack {
     private int[] stack;

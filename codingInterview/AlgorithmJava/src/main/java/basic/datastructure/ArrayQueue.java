@@ -1,6 +1,4 @@
-package hellocoding.datastructure;
-
-import java.lang.reflect.Array;
+package basic.datastructure;
 
 public class ArrayQueue {
     private int[] queue;

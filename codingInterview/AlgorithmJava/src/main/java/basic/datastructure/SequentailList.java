@@ -1,4 +1,4 @@
-package hellocoding.datastructure;
+package basic.datastructure;
 
 public class SequentailList implements DataStructure {
     private int[] array;

@@ -1,4 +1,4 @@
-package hellocoding.datastructure;
+package basic.datastructure;
 
 public interface DataStructure {
     Object insert(final int num);
