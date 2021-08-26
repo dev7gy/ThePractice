@@ -1,0 +1,7 @@
+intellij
+**/*.iml
+
+# visual studio
+**/*.csproj
+**/*.sln
+
