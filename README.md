@@ -5,7 +5,7 @@
 
 ## codingInterview [개념 정리](https://github.com/dev7gy/ThePractice/tree/main/codingInterview)
 ### - [Java Practice](https://github.com/dev7gy/ThePractice/tree/main/codingInterview/AlgorithmJava)
-### - [C# Practice](https://github.com/dev7gy/ThePractice/tree/main/codingInterview/HelloCoding_Algorithm)
+### - [C# Practice](https://github.com/dev7gy/ThePractice/tree/main/codingInterview/HelloCodingAlgorithm)
 ### - [LeetCode](https://github.com/dev7gy/ThePractice/tree/main/codingInterview/leetcode)
 
 ## SqlPractice
