@@ -11,7 +11,7 @@
 #### List의 특성
 - 데이터를 나란히 저장한다. 중복되는 데이터를 허용한다. 
 
-#### 리스트의 ADT - 특성을 기반으로 제공해야 할 기능
+#### SequentailList의 ADT - 특성을 기반으로 제공해야 할 기능
 ```
 void ListInit();
 void Insert(Data data);
@@ -70,6 +70,12 @@ Data Dequeue();
 ### - Graph
 ---
 ## Algorithm
+## P 분류(class) - NP 분류(class)
+- P분류: 판정 문제들을 분류하는 방법
+```
+판정문제: 입력 값에 대해 예/아니오 답을 내릴 수 있는 문제
+결정론적 튜링 기계에서 다항식 시간 안에 풀 수 있는 모든 문제를 포함.
+```
 ## - sort
  - selection sort
 ## - search
