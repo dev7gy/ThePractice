@@ -9,8 +9,6 @@ namespace DivideAndConquer
             Console.WriteLine(EuclideanAlgorithm(1680, 640));
             int[] arr = { 1, 2, 3, 4 };
             Console.WriteLine(SumArray(arr));
-
-            DFS(3);
         }
         public static int EuclideanAlgorithm(int x, int y)
         {
@@ -50,38 +48,69 @@ namespace DivideAndConquer
             return newArray;
         }
 
-        public int[] QuickSort(int[] array)
+        /*
+         * 분할 정복
+         * pivot을 기준으로 하위 배열을 각각 따로 정렬
+         */
+        public static void QuickSort(int[] array)
         {
-            int[] answer = new int[array.Length];
-            return answer;
+            quickSortRecursive(array, 0, array.Length - 1);
         }
 
-        public static void DFS(int num)
+        private static void quickSortRecursive(int[] array, int left, int right)
         {
-            int[] array = new int[11];
-            HelperRecursive(1, num, array);
-        }
-        public static void HelperRecursive(int L, int num, int[] ch)
-        {
-            if (L == num + 1)
+            if (left >= right)
             {
-                for (int i = 1; i <= num; i++)
-                {
-                    if(ch[i] == 1)
-                    {
-                        Console.Write($"{i} ");
-                    }
-                }
-                Console.WriteLine();
-            } 
-            else
-            {
-                ch[L] = 1;
-                HelperRecursive(L + 1, num, ch);
-                ch[L] = 0;
-                HelperRecursive(L + 1, num, ch);
+                return;
             }
 
+            // 실제 각 회차에 정렬을 수행하는 함수.
+            int pivotIndex = partition(array, left, right);
+
+            quickSortRecursive(array, left, pivotIndex - 1);
+            quickSortRecursive(array, pivotIndex + 1, right);
+        }
+
+        private static int partition(int[] array, int left, int right)
+        {
+            /**
+             * index:0, 1, 2, 3, 4
+             * array[2, 5, 1, 3, 4]
+             *       j ->  
+             *       좌          우
+             * pivot == 4
+             * i == 좌 포인터
+             */
+            int pivot = array[right];
+            int i = left;
+
+            /*
+             * 배열에서 pivot(제일 오른쪽)과 pivot 전까지의 원소들을 비교.
+             * 
+             * pivot보다 작을때만 교환하고 i를 오른쪽으로 증가시킨다. i가 가리키는 값과 j가 가리키는 값을 서로 교환함.
+             * 배열에서 2는 4보다 작기 때문에 자기 자신을 교환하게 된다. swap(array, 0, 0);
+             */
+            for (int j = left; j < right; ++j)
+            {
+                // pivot보다 작을때, 클 때는 아무것도 하지 않음.
+                if (array[j] < pivot)
+                {
+                    swap(array, i, j); // 교환하고 나면 i가 가리키는 값은 기준값보다 작은 값이 된다. 
+                    i++;
+                }
+            }
+
+            int pivotIndex = i;
+            swap(array, pivotIndex, right);
+
+            return pivotIndex;
+        }
+
+        private static void swap(int[] array, int index1, int index2)
+        {
+            int temp = array[index2];
+            array[index2] = array[index1];
+            array[index1] = temp;
         }
     }
 }
