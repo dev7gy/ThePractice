@@ -7,8 +7,19 @@ namespace DivideAndConquer
         static void Main(string[] args)
         {
             Console.WriteLine(EuclideanAlgorithm(1680, 640));
-            int[] arr = { 1, 2, 3, 4 };
+            int[] arr = { 4, 1, 3, 2, 1 };
             Console.WriteLine(SumArray(arr));
+            QuickSort(arr);
+            for(int i = 0; i < arr.Length; ++i)
+            {
+                Console.WriteLine("Quik Sort");
+                Console.Write(arr[i]);
+            }
+            Console.WriteLine();
+
+            Console.WriteLine(CountFromArray(arr, 2));
+            int[] sortedArr = { 1, 2, 3, 4, 5 };
+            Console.WriteLine(BinarySearch(sortedArr, )
         }
         public static int EuclideanAlgorithm(int x, int y)
         {
@@ -48,6 +59,31 @@ namespace DivideAndConquer
             return newArray;
         }
 
+        public static int CountFromArray(int[] arr, int x)
+        {
+            int count;
+            return recursiveCountFromArray(arr, x, out count);
+        }
+
+        private static int recursiveCountFromArray(int[] arr, int x, out int count)
+        {
+            
+            if (arr.Length == 0)
+            {
+                count = 0;
+                return count;
+            }
+            else
+            {
+                if(arr[0] == x)
+                {
+                    count = 1;
+                    return count + recursiveCountFromArray(getSubArray(arr, 1, arr.Length - 1), x, out count);
+                }
+                return recursiveCountFromArray(getSubArray(arr, 1, arr.Length - 1), x, out count);
+            }
+        }
+
         /*
          * 분할 정복
          * pivot을 기준으로 하위 배열을 각각 따로 정렬
@@ -65,13 +101,13 @@ namespace DivideAndConquer
             }
 
             // 실제 각 회차에 정렬을 수행하는 함수.
-            int pivotIndex = partition(array, left, right);
+            int pivotIndex = partitionRight(array, left, right);
 
             quickSortRecursive(array, left, pivotIndex - 1);
             quickSortRecursive(array, pivotIndex + 1, right);
         }
 
-        private static int partition(int[] array, int left, int right)
+        private static int partitionRight(int[] array, int left, int right)
         {
             /**
              * index:0, 1, 2, 3, 4
@@ -112,5 +148,27 @@ namespace DivideAndConquer
             array[index2] = array[index1];
             array[index1] = temp;
         }
+
+        public static int BinarySearch(int[] sortedArray, int searchItem)
+        {
+
+            return recursiveBinarySearch(sortedArray, searchItem);
+        }
+
+        private static int recursiveBinarySearch(int[] sortedArray, int searchItem)
+        {
+            int mid = sortedArray.Length / 2;
+            if (sortedArray[mid] == searchItem)
+            {
+                return mid;
+            }
+            else if(sortedArray[mid] < searchItem)
+            {
+                return recursiveBinarySearch(getSubArray(sortedArray, mid + 1, sortedArray.Length - 1), searchItem);
+            }
+            else
+            {
+                return recursiveBinarySearch(getSubArray(sortedArray, 0, mid - 1), searchItem);
+            }
+        }
     }
-}
