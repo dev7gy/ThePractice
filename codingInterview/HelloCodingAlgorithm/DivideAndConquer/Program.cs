@@ -10,16 +10,17 @@ namespace DivideAndConquer
             int[] arr = { 4, 1, 3, 2, 1 };
             Console.WriteLine(SumArray(arr));
             QuickSort(arr);
-            for(int i = 0; i < arr.Length; ++i)
+            Console.WriteLine("Quik Sort");
+            for (int i = 0; i < arr.Length; ++i)
             {
-                Console.WriteLine("Quik Sort");
                 Console.Write(arr[i]);
             }
             Console.WriteLine();
-
+            Console.WriteLine("Count from Array");
             Console.WriteLine(CountFromArray(arr, 2));
             int[] sortedArr = { 1, 2, 3, 4, 5 };
-            Console.WriteLine(BinarySearch(sortedArr, )
+            Console.WriteLine("Binary Search");
+            Console.WriteLine(BinarySearch(sortedArr, 3));
         }
         public static int EuclideanAlgorithm(int x, int y)
         {
@@ -27,22 +28,23 @@ namespace DivideAndConquer
             {
                 return y;
             }
-            
+
             return EuclideanAlgorithm(y, x % y);
         }
 
         public static int SumArray(int[] array)
         {
-            if(array == null || array.Length < 1)
+            if (array == null || array.Length < 1)
             {
                 Console.Error.WriteLine("Check Array");
                 return 0;
             }
 
-            if(array.Length == 1)
+            if (array.Length == 1)
             {
                 return array[0];
-            } else
+            }
+            else
             {
 
                 return array[0] + SumArray(getSubArray(array, 1, array.Length - 1));
@@ -52,7 +54,7 @@ namespace DivideAndConquer
         private static int[] getSubArray(int[] original, int start, int end)
         {
             int[] newArray = new int[end - start + 1];
-            for(int i = 0; i < newArray.Length; i++) 
+            for (int i = 0; i < newArray.Length; i++)
             {
                 newArray[i] = original[start + i];
             }
@@ -67,7 +69,7 @@ namespace DivideAndConquer
 
         private static int recursiveCountFromArray(int[] arr, int x, out int count)
         {
-            
+
             if (arr.Length == 0)
             {
                 count = 0;
@@ -75,7 +77,7 @@ namespace DivideAndConquer
             }
             else
             {
-                if(arr[0] == x)
+                if (arr[0] == x)
                 {
                     count = 1;
                     return count + recursiveCountFromArray(getSubArray(arr, 1, arr.Length - 1), x, out count);
@@ -157,12 +159,16 @@ namespace DivideAndConquer
 
         private static int recursiveBinarySearch(int[] sortedArray, int searchItem)
         {
+            if (sortedArray.Length < 1)
+            {
+                return -1;
+            }
             int mid = sortedArray.Length / 2;
             if (sortedArray[mid] == searchItem)
             {
                 return mid;
             }
-            else if(sortedArray[mid] < searchItem)
+            else if (sortedArray[mid] < searchItem)
             {
                 return recursiveBinarySearch(getSubArray(sortedArray, mid + 1, sortedArray.Length - 1), searchItem);
             }
@@ -172,3 +178,4 @@ namespace DivideAndConquer
             }
         }
     }
+}
