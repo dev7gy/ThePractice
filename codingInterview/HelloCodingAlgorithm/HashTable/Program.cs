@@ -14,9 +14,5 @@ namespace HashTable
             Console.WriteLine(map.GetValue(obj));
             Console.WriteLine(map.GetValue("pear"));
         }
-
-        
-
-
     }
 }
