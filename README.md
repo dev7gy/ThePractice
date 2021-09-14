@@ -1,18 +1,18 @@
 # ThePractice
+## Study Computer Science
+### - [Operating System](https://github.com/dev7gy/ThePractice/tree/main/BookSummary/OperatingSystem)
+### - [Network](https://github.com/dev7gy/ThePractice/tree/main/BookSummary/Network)
 ---
-## OopPractice
-### - [Java Practice](https://github.com/dev7gy/ThePractice/tree/main/OopPractice)
-
-## codingInterview [개념 정리](https://github.com/dev7gy/ThePractice/tree/main/codingInterview)
+## CodingInterview [개념 정리](https://github.com/dev7gy/ThePractice/tree/main/codingInterview)
 ### - [Java Practice](https://github.com/dev7gy/ThePractice/tree/main/codingInterview/AlgorithmJava)
 ### - [C# Practice](https://github.com/dev7gy/ThePractice/tree/main/codingInterview/HelloCodingAlgorithm)
 ### - [LeetCode](https://github.com/dev7gy/ThePractice/tree/main/codingInterview/leetcode)
-
-## SqlPractice
 ### - [Sql Practice](https://github.com/dev7gy/ThePractice/tree/main/SqlPractice)
+### - [Oop Practice](https://github.com/dev7gy/ThePractice/tree/main/OopPractice)
 
-## MVC 패턴 구경하기
+## 디자인 패턴 구경하기
 ### - [.net MVC](https://github.com/dev7gy/ThePractice/tree/main/WebApplication1)
+
 ## Before 2021.08
 ### - [ygunna](https://github.com/dev7gy/ThePractice/tree/main/ygunna)
 - [Spring Boot](https://github.com/dev7gy/ThePractice/tree/main/ygunna/springBootStudy)
@@ -22,7 +22,7 @@
 - [unix_system_call](https://github.com/dev7gy/ThePractice/tree/main/ygunna/studyAll/unix_system/ch01_unixSystemBasic)
 - [vanila JS_app](https://github.com/dev7gy/ThePractice/tree/main/ygunna/studyAll/web)
 ---
-# Using github
+#### Using github
 - remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
 
 ```
