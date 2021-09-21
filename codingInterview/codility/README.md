@@ -1,9 +1,9 @@
 # Codility
-## Lessons: 7/47
+## Lessons: 9/47
 ### 1. [Iterations](https://app.codility.com/programmers/lessons/1-iterations/): 1/1
 ### 2. [Arrays](https://app.codility.com/programmers/lessons/2-arrays/): 2/2
 ### 3. [Time Complexity](https://app.codility.com/programmers/lessons/3-time_complexity/): 3/3
-### 4. [Counting Elements](https://app.codility.com/programmers/lessons/4-counting_elements/): 1/4
+### 4. [Counting Elements](https://app.codility.com/programmers/lessons/4-counting_elements/): 3/4
 ### 5. [Prefix Sums](https://app.codility.com/programmers/lessons/5-prefix_sums/): 4
 ### 6. [Sorting](https://app.codility.com/programmers/lessons/6-sorting/): 4
 ### 7. [Stacks and Queues](https://app.codility.com/programmers/lessons/7-stacks_and_queues/): 4
