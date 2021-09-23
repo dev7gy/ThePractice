@@ -5,6 +5,7 @@ exceed: 초과하다.
 0 동쪽, 1 서쪽
 (동, 서)
 */
+import java.util.*;
 class Solution {
     // O(N^2) score 50
     public int solution(int[] A) {
@@ -25,37 +26,50 @@ class Solution {
         return answer;
     }
  
-    // O(N) fail
+    /*
+    [0, 1] 1
+    [1, 0] 0
+    [1, 0, 1] 1
+    [1, 0, 1, 1] 2
+    [1, 0, 1, 1, 1, 0, 1] 5
+    [0, 1, 0, 1, 0, 1] 6
+    */
+    // O(N) 
     public int solution(int[] A) {
-        // write your code in Java SE 8
-        int prefixSumsLength = 0;
-        for (int i = 0; i < A.length; i++) {
-            if (A[i] == 0) {
-                prefixSumsLength++;
-            }
-        }
-        int[] prefixSums = new int[prefixSumsLength];
-
-        int p = -1;
+        List<Integer> array = new ArrayList<Integer>(); 
+        int before = -1;
         int count = 0;
-        for (int j = 0; j < A.length; j++) {
-            if(A[j] == 0) {
-                p++;
-                if (p > 0) {
-                    prefixSums[p] = prefixSums[p-1];
+        for (int i = 0; i < A.length; i++) {
+            if (A[i] == 0) {   
+                count = i - before - 1;
+                if (array.size() > 0) {
+                    array.add(count + array.get(array.size() - 1));
+                } else if (array.size() == 0 && before >= 0) {                   
+                    array.add(count);
                 }
-            } else {
-                prefixSums[p]++;
+                before = i;
             }
         }
 
-        int answer = 0;
-        for (int k = prefixSumsLength - 1; k > 0; k--) {
-            answer += prefixSums[k] - prefixSums[k-1]; 
+        if (A[A.length - 1] == 1 && before > -1) {
+            count = A.length - before - 1;
+            int temp = 0;
+            if (array.size() > 0) {
+                temp = array.get(array.size() - 1);
+            }
+            array.add(count + temp);
         }
-        answer += prefixSums[prefixSumsLength - 1];
-        if (answer > 1000000000) {
-            return -1;
+
+        if (array.size() < 1) {
+            return 0;
+        }
+
+        int answer = array.get(array.size() - 1);
+        for (int j = 0; j < array.size() - 1; j++) {
+            answer += array.get(array.size() - 1) - array.get(j);
+            if (answer > 1000000000) {
+                return -1;
+            }
         }
         return answer;
     }
