@@ -231,3 +231,78 @@ Ethernet frame
 - 5XX: Server Error: 재시도하면 서버 복구 완료시 성공할 가능성이 있음.
     - 500
     - 503: 서비스 이용 불가
+
+### 5. HTTP 헤더
+- RFC723X 표준
+{
+    Representation 헤더: 표현 데이터를 해석할 수 있는 정보 제공
+    message body{ Representation 데이터 }
+    // message body == payload
+    // resource -> Representation이라고 명명하는 시점
+}
+- Representation Header
+    - Content-Type: text/html, application/json, image/jpeg
+    - Content-Encoding: gzip, deflate, indentity
+    - Content-Language: charset=UTF-8
+    - Content-Length: 바이트 단위, Transfer-Encoding을 사용할 땐 사용하면 안됨.
+
+- Contents negotiation
+    - 클라이언트가 선호하는 표현 요청
+        - Accept: 클라이언트에서 선호하는 미디어 타입 전달
+        - Accept-Charset
+        - Accept-Encoding
+        - Accept-Language
+    - 우선순위 예시
+        - Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+        - Accept: text/*,text/plin,text/plain;format=flowed,*/*
+
+- 전송 방식
+    - 단순 전송: content-length 기반으로 전송.
+    - 압축 전송: content-encoding도 추가해서 전송.
+    - 분할 전송: !중요! content-length를 제외해야 함. transfer-encoding: chunked 같은 방식으로 사용
+    - 범위 전송: bytes 1001-2000/ 2000
+
+- 일반 정보
+    - from: 유저 에이전트의 이메일 정보
+    - referer: 현재 요청한 페이지 기준으로 이전 웹페이지 주소(유입 경로 분석에 사용), referrer의 오타지만 사용
+    - user-agent: 유저 에이전트 애플리케이션 정보, 웹 브라우저 정보
+    - server: 요청을 처리하는 ORIGIN 서버의 소프트웨어 정보- 중간에 거치게 되는 cache서버, proxy서버가 아니라 실제 요청이 있는 서버
+    - date: 메시지가 발생한 날짜와 시간
+
+- 특별한 정보
+    - Host: !필수값! 요청한 호스트 정보
+    - Location: 3XX 응답의 결과에 Location이 있으면 자동으로 redirect
+    - Allow: 허용 가능한 HTTP 메서드를 알려주는 정보
+    - Retry-After: 503 응답과 함께 사용해서 언제 서비스가 사용 가능한지 알려주는 정보
+
+- 인증 관련 헤더
+    - Authorization
+
+- 쿠키 헤더
+    - Set-Cookie: 서버에서 클라이언트에 응답
+    - Cookie: 클라이언트가 서버에서 받은 쿠키를 저장, HTTP요청시 서버로 전달
+    ```
+    1. 쿠키를 사용하지 않으면 클라이언트에서 서버에 데이터 요청할 때마다 사용자 정보를 전달해야함.
+    2. 서버에서 응답할 때 set-cookie라는 헤더를 이용해서 클라이언트의 쿠키 저장소에 사용자 정보를 저장함.
+    3. 이후 클라이언트가 요청시 자동으로 쿠키 저장소에 있는 정보를 Cookie헤더에 담아서 요청함.
+    4. 그렇기 때문에 쿠키에 보안상 민감한 정보는 절대 저장하면 안됨.
+    ```
+    - 쿠키 생명주기
+        - Set-Cookie: expire=Sat, 26-Jan...., 만료일이 되면 쿠키 삭제
+        - Set-Cookie: max-age=3600, 3600초 지나면 쿠키 삭제
+        - 세션쿠키: 만료 날짜 생략하면 브라우저 종료 기준으로 쿠키 삭제
+        - 영속 쿠키: 입력된 만료 날짜까지 유지
+    - 쿠키 도메인
+        - 명시: 서브 도메인도 적용
+        - 생략: 현재 도메인만 적용
+        ```
+        domain=dev7gy.com
+        명시: test.dev7gy.com쿠키 접근 가능
+        생략: test.dev7gy.com쿠키 접근 불가능
+        ```
+    - 쿠키 경로
+        - path=/test, /test/xxx/... 등 접근 가능
+    - 쿠키 보안
+        - Secure: https에만 전송
+        - HttpOnly: XSS공격 방지, 자바스크립트에서 접근 불가
+        - SameSite: CSRF공격 방지
