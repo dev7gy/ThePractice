@@ -196,3 +196,38 @@ Ethernet frame
     - 컬렉션: 서버가 관리하는 것
     - 스토어: 클라이언트가 관리하는 것
     - 컨트롤러: 위 3가지 경우로 대체하기 불가능한 경우 - 동사 키워드를 사용
+
+### 4. HTTP 상태 코드
+- 1XX: 요청이 수신되어 처리중
+- 2XX: 요청 정상 처리
+- 3XX: Redirection
+    - Redirection: 웹 브라우저에서 3XX 응답 결과에 Location 헤더가 있으면 Location 위치로 자동 이동하는 것.
+    - 브라우저를 통해 클라이언트에서 /old-resource 요청 -> 서버에서 301 상태 코드와 함께 Location: /new-resource 응답 -> 브라우저에서 자동으로 /new-resource 요청 -> 서버에서 200응답.
+    - 종류
+        - 영구 Redirection(301, 308): 경로가 완전히 바뀌었다.
+            - 301: HTTP메서드랑(Post -> Get) 메시지도 제거될 수 있음(주로 사용)
+            - 308: HTTP매서드 유지, 메시지도 유지
+        - 일시 Redirection(302, 307, 303)
+            - 302: Found(Post -> Get), 메시지 제거될 수 있음
+            - 307: Temporary Redirect, HTTP 메서드, 메시지 유지
+            - 303: See Other, (Post -> Get)
+            - !중요 예시! Post/Redirect/Get 패턴
+            ```
+            /*
+             Post로 Resource 등록 후 웹 브라우저를 새로고침 한다면?
+             중복 등록이 될 수 있다.
+            */
+            Post로 등록 후 -> redirection -> get으로 등록 완료 화면으로 이동
+            ```
+
+        - 특수 Redirection(303, 304)
+            - 304: 로컬 캐시를 사용하는 경우
+
+- 4XX: Client Error: 재시도해도 항상 실패.
+    - 401: 인증(로그인 문제)
+    - 403: Fobidden - 인가(접근 권한 문제)
+    - 404: resource 없음.
+
+- 5XX: Server Error: 재시도하면 서버 복구 완료시 성공할 가능성이 있음.
+    - 500
+    - 503: 서비스 이용 불가
