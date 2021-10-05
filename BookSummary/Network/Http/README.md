@@ -306,3 +306,33 @@ Ethernet frame
         - Secure: https에만 전송
         - HttpOnly: XSS공격 방지, 자바스크립트에서 접근 불가
         - SameSite: CSRF공격 방지
+
+- 캐시
+    - 검증헤더:조건부 요청
+        - Last-Modified:if-modified-since, if-Unmodified-since
+        ```
+            // 1초 미만 단위로 캐시 조정 불가능, 날짜 기반 로직
+            // 데이터가 변경되지 않았으면
+            304 Not Modified, HTTP BODY없이 보냄
+        ```
+        - ETag:If-None-Match, if-Match
+        ```
+            // 캐시용 데이터에 임의의 고유 버젼을 달아둠.
+            // 캐시 제어 로직을 서버에서 100%r관리
+        ```
+    - 캐시 제어 헤더
+        - cache-control: 캐시 유효시간(초단위)
+            - no-cache: 데이터는 캐시해도 되지만, 항상 ORIGIN 서버에 검증하고 사용
+            - no-store: 데이터에 민감한 정보이므로 저장하면 안된다는 뜻.
+        - pragma: no-cache
+        - expires: 캐시 만료일
+
+    - 프록시 캐시
+        - Cache-Control: public, private, s-maxage
+        - Age: Origin 서버에서 응답 후 프록시 캐시 내에 머문 시간(초단위)
+    
+    - 캐시 무효화시키는 법
+        - Cache-Control: no-cache, no-store, must-revalidate
+            - no-cache vs must-revalidate
+                - 네트워크 단절 되었을 경우 proxy cache를 통해 처리하느냐 아니냐 차이
+        - Pragma: no-cache
