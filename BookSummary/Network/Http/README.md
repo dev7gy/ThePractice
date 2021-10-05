@@ -136,6 +136,7 @@ Ethernet frame
     - 단순하고 확장 가능함.
 
 ### 2. HTTP 메서드
+
 - API 설계에서 가장 중요한 것
     - 리소스 식별
     - ex) 회원 조회, 등록, 삭제 기능에서 리소스는 "회원"이다.
@@ -154,3 +155,44 @@ Ethernet frame
     - 멱등(Idempotent Methods): 몇번을 중복해서 호출하더라도 최종 결과가 같음.
         - POST는 멱등이 아니다.
     - 캐시가능(Cacheable Methods): 응답 결과 리소스를 캐시해서 사용 가능 여부, GET과 HEAD에서 주로 사용
+
+- 활용
+    - 데이터 전달 방식에 따른 분류
+        - 쿼리 파라미터를 통한 전송: GET
+        - 메시지 바디를 통한 데이터 전송: POST, PUT, PATCH
+    - 데이터 유형에 따른 분류
+        - 정적 데이터 조회
+        - 동적 데이터 조회
+        - HTML Form을 통한 데이터 전송, !중요! get-post만 가능
+            - 사용 Content-Type: application/x-www-form-urlencoded, key:value형태의 값
+            - 사용 Content-Type: multipart/form-data, 파일 전송시
+        - HTTP Api를 통한 데이터 전송
+            - 사용 Content-Type: application/json을 주로 사용
+
+### 3. HTTP API 설계 방법 [HTTP API 설계 예시](https://restfulapi.net/resource-naming/) 
+- !중요! 리소스 식별이 최고 핵심.
+- !중요! Post-Put-Patch 차이 구분
+    - Post(예시 회원 관리 시스템)
+        - 클라이언트는 리소스의 !URI를 알지 못하고 등록하고 싶은 데이터만! 서버에게 준다. /members
+        - 서버가 새로 등록되는 리소스의 URI를 생성한다.
+        - Collection이란?
+            - 서버가 관리하는 리소스 디렉토리
+            - 서버가 리소스의 URI를 생성하고 관리하는 것(/members)
+
+    - Put(예시 파일 관리 시스템)
+        - 클라이언트는 !리소스의 URI를 직접 생성해서! 서버에 요청한다. /files/파일명.txt
+        - Store란?
+            - 클라이언트가 관리하는 리소스 저장소
+            - 클라이언트가 리소스의 URI를 생성하고 관리하는 것(/files)
+    - Patch
+
+- !중요! HTML FORM 사용 방식
+    - GET, POST만 지원한다. 
+    - DELETE는 사용할 수 없다. -> 컨트롤 URI를 사용할 수 밖에 없다. /members/{id}/delete
+    - /new, /edit, /delete 등 액션을 컨트롤 URI라고 한다. !그래도 리소스 중심 설계가 제일 중요하다.!
+
+- 참고용 API 설계 개념
+    - 문서(document): 단일 개념
+    - 컬렉션: 서버가 관리하는 것
+    - 스토어: 클라이언트가 관리하는 것
+    - 컨트롤러: 위 3가지 경우로 대체하기 불가능한 경우 - 동사 키워드를 사용
