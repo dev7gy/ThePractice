@@ -2,8 +2,10 @@
 ## Study Computer Science
 ### - [Operating System](https://github.com/dev7gy/ThePractice/tree/main/BookSummary/OperatingSystem)
 ### - [Network](https://github.com/dev7gy/ThePractice/tree/main/BookSummary/Network)
+### - [DataBase]()
+### - [Computer Science]()
 ---
-## CodingInterview [개념 정리](https://github.com/dev7gy/ThePractice/tree/main/codingInterview)
+## Algorithm - DataStructure [개념 정리](https://github.com/dev7gy/ThePractice/tree/main/codingInterview)
 ### - [Java Practice](https://github.com/dev7gy/ThePractice/tree/main/codingInterview/AlgorithmJava)
 ### - [C# Practice](https://github.com/dev7gy/ThePractice/tree/main/codingInterview/HelloCodingAlgorithm)
 ### - [Codility](https://github.com/dev7gy/ThePractice/tree/main/codingInterview/codility)
@@ -11,10 +13,10 @@
 ### - [Sql Practice](https://github.com/dev7gy/ThePractice/tree/main/SqlPractice)
 ### - [Oop Practice](https://github.com/dev7gy/ThePractice/tree/main/OopPractice)
 
-## 디자인 패턴 구경하기
+## Web
 ### - [.net MVC](https://github.com/dev7gy/ThePractice/tree/main/WebApplication1)
 
-## frontend
+## Frontend
 ## Before 2021.08
 ### - [ygunna](https://github.com/dev7gy/ThePractice/tree/main/ygunna)
 - [Spring Boot](https://github.com/dev7gy/ThePractice/tree/main/ygunna/springBootStudy)
